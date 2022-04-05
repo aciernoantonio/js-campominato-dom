@@ -102,6 +102,10 @@ function bombClick(){
         this.classList.add("blue")
         contatore++;
 
+/*         if (contatore == gridLevel() - 16){
+            alert("Hai vinto!");
+        } */
+
 /*         console.log(contatore); */
     }
 }
