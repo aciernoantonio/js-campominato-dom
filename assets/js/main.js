@@ -47,17 +47,14 @@ function gridLevel (limit){
         //appendo l'elemento al suo container
         containerElement.append(cellElement);
 
-        cellElement.addEventListener("click", function() {
-            
-            if (bombList.includes(cellElement)) {
-                console.log("bomba");
-                
-            } else cellElement.style.backgroundColor = "cornflowerblue";
+        cellElement.addEventListener("click", cellClick);
 
-        })
+        cellElement.addEventListener("click", bombClick);
+
     }
 
 }
+
 
 //crea 16 numeri casuali per le bombe
 
@@ -79,17 +76,35 @@ function generateBomb(min, max){
  
     }
     
-    console.log(bombList);        
+/*     console.log(bombList);   */      
 
 }
 
 generateBomb(1, 100);   
 
+let contatore = 0;
 
+function cellClick(){
+    this.classList.add("blue");
 
+}
 
+function bombClick(){
+    const cellElement = parseInt(this.textContent);
+/*     console.log(`cella ${cellElement}`); */
 
+    if(bombList.includes(cellElement)){
+        this.classList.add("red");
+        alert("Bomba, hai perso!");
+        alert(`Hai totalizzato ${contatore} punti!`)
 
+    } else {
+        this.classList.add("blue")
+        contatore++;
+
+/*         console.log(contatore); */
+    }
+}
 
 
 
