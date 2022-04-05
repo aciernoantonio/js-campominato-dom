@@ -51,6 +51,36 @@ function gridLevel (limit){
 
 }
 
+//crea 16 numeri casuali per le bombe
+
+let bombList = [];
+
+function generateBomb(min, max){
+
+    for (let j = 1; j <= 16; j++){
+    
+        let bombGen = Math.floor(Math.random() * (max - min)) + min;
+
+        if (bombList.includes(bombGen)) {
+            let newNumber = Math.floor(Math.random() * (max - min)) + min;
+            bombList.push(newNumber)
+        } else {
+
+            bombList.push(bombGen);
+        }
+ 
+    }
+    
+    console.log(bombList);        
+
+}
+
+generateBomb(1, 100);
+
+
+
+
+
 
 
 
