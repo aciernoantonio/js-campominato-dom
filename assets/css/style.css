@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aquamarine;
+}
+
+#site_header{
+    background-color: white;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo_section,
+.form_section{
+    display: flex;
+    align-items: center;
+}
+
+.logo_img{
+    margin: 1rem 0;
+    width: 50px;
+    margin-right: 25px;
+}
+
+#play{
+    background-color: lightgray;
+    padding: 0.5rem 1rem;
+    border-style: none;
+    border-radius: 20px;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.cells{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.single_cell{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid white;
+    padding: 2rem;
+    text-align: center;
+}
