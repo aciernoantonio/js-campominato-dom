@@ -4,6 +4,7 @@ let playElement = document.getElementById("play");
 
 playElement.addEventListener("click", difficultLevel);
 
+let bombList = [];
 
 /* 
     FUNCTION SECTION
@@ -22,6 +23,8 @@ function difficultLevel(){
         gridLevel(49);
     }
 }
+
+
 
 
 //genera una griglia di gioco quadrata
@@ -45,7 +48,12 @@ function gridLevel (limit){
         containerElement.append(cellElement);
 
         cellElement.addEventListener("click", function() {
-            cellElement.style.backgroundColor = "cornflowerblue";
+            
+            if (bombList.includes(cellElement)) {
+                console.log("bomba");
+                
+            } else cellElement.style.backgroundColor = "cornflowerblue";
+
         })
     }
 
@@ -53,7 +61,7 @@ function gridLevel (limit){
 
 //crea 16 numeri casuali per le bombe
 
-let bombList = [];
+
 
 function generateBomb(min, max){
 
@@ -75,7 +83,9 @@ function generateBomb(min, max){
 
 }
 
-generateBomb(1, 100);
+generateBomb(1, 100);   
+
+
 
 
 
