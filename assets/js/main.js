@@ -10,21 +10,24 @@ let bombList = [];
     FUNCTION SECTION
 */
 
+let maxTry;
+
 function difficultLevel(){
     let valore = document.getElementById("level").value;
     
     if (valore == "easy") {
         gridLevel(100);
+        maxTry = 100;
 
     } else if (valore == "medium") {
         gridLevel(81);
+        maxTry = 81;
 
     } else if (valore == "hard") {
         gridLevel(49);
+        maxTry = 49;
     }
 }
-
-
 
 
 //genera una griglia di gioco quadrata
@@ -58,6 +61,7 @@ function gridLevel (limit){
 
 //crea 16 numeri casuali per le bombe
 
+let goodClick = [];
 
 
 function generateBomb(min, max){
@@ -101,12 +105,11 @@ function bombClick(){
     } else {
         this.classList.add("blue")
         contatore++;
+        goodClick.push(contatore)
 
-/*         if (contatore == gridLevel() - 16){
+        if (goodClick == maxTry - 16){
             alert("Hai vinto!");
-        } */
-
-/*         console.log(contatore); */
+        }
     }
 }
 
